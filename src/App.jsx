@@ -15,18 +15,17 @@ export const App = () => {
   const [query, setQuery] = useState('');
 
   const handleToggleCategory = categoryId => {
+    if (categoryId === null) {
+      setSelectedCategories([]);
+      setSelectedUserId(null);
+      setQuery('');
+
+      return;
+    }
+
     setSelectedCategories(prevSelected => {
       if (prevSelected.includes(categoryId)) {
-        return (
-          prevSelected.filter(id => id !== categoryId) || [
-            ...prevSelected,
-            categoryId,
-          ]
-        );
-      }
-
-      if (categoryId === null) {
-        return [];
+        return prevSelected.filter(id => id !== categoryId);
       }
 
       return [...prevSelected, categoryId];

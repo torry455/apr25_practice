@@ -14,21 +14,17 @@ export const FiltersPanel = ({
     <div className="block">
       <nav className="panel">
         <p className="panel-heading">Filters</p>
-        {/* User buttons */}
         <UserFilterBtn
           usersFromServer={users}
           selectedUserId={selectedUserId}
           setSelectedUserId={setSelectedUserId}
         />
-        {/* Search input */}
 
-        {/* Category buttons */}
         <CategoryBtn
           categories={categoriesArray}
           selectedCategories={selectedCategoriesArray}
           onToggleCategory={handleToggleCategory}
         />
-        {/* Reset button */}
         <ResetBtn />
       </nav>
     </div>
