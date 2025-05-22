@@ -14,7 +14,6 @@ export const App = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [query, setQuery] = useState('');
 
-  // Функція для перемикання вибраної категорії
   const handleToggleCategory = categoryId => {
     setSelectedCategories(prevSelected => {
       if (prevSelected.includes(categoryId)) {
@@ -34,7 +33,6 @@ export const App = () => {
     });
   };
 
-  // Фільтрація продуктів за вибраним користувачем, категоріями та пошуковим запитом
   const filteredProducts = productsFromServer.filter(product => {
     const matchesUser = selectedUserId
       ? product.user?.id === selectedUserId
